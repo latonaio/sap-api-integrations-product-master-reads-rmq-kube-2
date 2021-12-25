@@ -4,7 +4,7 @@
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"material": {
-		"Material": "A001",
+		"Material": "68",
 		"Product_desc": "",
 		"BaseUnit": "",
 		"ValidityStartDate": "",
@@ -101,6 +101,6 @@
 	},
 	"api_schema": "sap.s4.beh.product.v1.Product.Created.v1",
 	"accepter": ["General"],
-	"material_code": "A001",
+	"material_code": "68",
 	"deleted": false
 }
