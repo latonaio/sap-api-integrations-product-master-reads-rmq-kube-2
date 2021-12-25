@@ -100,7 +100,7 @@
 		}
 	},
 	"api_schema": "sap.s4.beh.product.v1.Product.Created.v1",
-	"accepter": ["General","Plant"],
+	"accepter": ["Plant"],
 	"material_code": "D20_EPDM_SMRT_S",
 	"deleted": false
 }
