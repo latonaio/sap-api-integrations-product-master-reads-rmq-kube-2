@@ -1,0 +1,102 @@
+{
+	"connection_key": "response",
+	"result": true,
+	"redis_key": "abcdefg",
+	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
+	"material": {
+		"Material": "21",
+		"Product_desc": "",
+		"BaseUnit": "",
+		"ValidityStartDate": "",
+		"ProductGroup": "",
+		"Division": "",
+		"GrossWeight": "",
+		"WeightUnit": "",
+		"SizeOrDimensionText": "",
+		"ProductStandardID": "",
+		"Plant": {
+			"Plant": "1010",
+			"PurchasingGroup": "",
+			"ProductionInvtryManagedLoc": "",
+			"AvailabilityCheckType": "",
+			"ProfitCenter": "",
+			"GoodsReceiptDuration": "",
+			"MRPType": "",
+			"MRPResponsible": "",
+			"MinimumLotSizeQuantity": "",
+			"MaximumLotSizeQuantity": "",
+			"FixedLotSizeQuantity": "",
+			"IsBatchManagementRequired": true,
+			"ProcurementType": "",
+			"IsInternalBatchManaged": true,
+			"GoodsIssueUnit": "",
+			"MaterialFreightGroup": "",
+			"ProductLogisticsHandlingGroup": "",
+			"IsMarkedForDeletion": false,
+			"MRPArea": {
+				"MRPArea": "",
+				"MRPType": "",
+				"MRPResponsible": "",
+				"MRPGroup": "",
+				"ReorderThresholdQuantity": "",
+				"PlanningTimeFence": "",
+				"LotSizingProcedure": "",
+				"LotSizeRoundingQuantity": "",
+				"MinimumLotSizeQuantity": "",
+				"MaximumLotSizeQuantity": "",
+				"MaximumStockQuantity": "",
+				"ProcurementSubType": "",
+				"DfltStorageLocationExtProcmt": "",
+				"MRPPlanningCalendar": "",
+				"SafetyStockQuantity": "",
+				"SafetyDuration": "",
+				"FixedLotSizeQuantity": "",
+				"PlannedDeliveryDurationInDays": "",
+				"StorageLocation": "",
+				"IsMarkedForDeletion": false
+			},
+			"Procurement": {
+				"IsAutoPurOrdCreationAllowed": true,
+				"IsSourceListRequired": true
+			},
+			"Sales_Plant": {
+				"LoadingGroup": "",
+				"AvailabilityCheckType": ""
+			},
+			"Work_Scheduling": {
+				"ProductionInvtryManagedLoc": "",
+				"ProductProcessingTime": "",
+				"ProductionSupervisor": "",
+				"ProductProductionQuantityUnit": "",
+				"ProdnOrderIsBatchRequired": "",
+				"MatlCompIsMarkedForBackflush": "",
+				"ProductionSchedulingProfile": ""
+			}
+		},
+		"Sales_Organization": {
+			"ProductSalesOrg": "DE10",
+			"ProductDistributionChnl": "10",
+			"SupplyingPlant": "",
+			"PriceSpecificationProductGroup": "",
+			"AccountDetnProductGroup": "",
+			"ItemCategoryGroup": "",
+			"SalesMeasureUnit": "",
+			"ProductHierarchy": "",
+			"IsMarkedForDeletion": false
+		},
+		"ValuationArea": {
+			"ValuationArea": "",
+			"ValuationClass": "",
+			"StandardPrice": "",
+			"PriceUnitQty": "",
+			"MovingAveragePrice": "",
+			"PriceLastChangeDate": "",
+			"PlannedPrice": "",
+			"IsMarkedForDeletion": false
+		}
+	},
+	"api_schema": "sap.s4.beh.product.v1.Product.Created.v1",
+	"accepter": ["SalesOrganization"],
+	"material_code": "21",
+	"deleted": false
+}

@@ -1,0 +1,10 @@
+{
+  "Product": "21",
+  "Plant": "DE10",
+  "IsAutoPurOrdCreationAllowed": false,
+  "IsSourceListRequired": false,
+  "cursor": "/Users/kyotatashiro/go/src/sap-api-integrations-product-master-reads-rmq-kube/SAP_API_Caller/caller.go#L124",
+  "function": "sap-api-integrations-product-master-reads-rmq-kube/SAP_API_Caller.(*SAPAPICaller).ProductPlantProcurement",
+  "level": "INFO",
+  "time": "2021-11-26T18:17:06.60862+09:00"
+}
