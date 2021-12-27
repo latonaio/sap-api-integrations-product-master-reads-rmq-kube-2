@@ -30,7 +30,7 @@ sap-api-integrations-product-master-reads-rmq-kube が利用する RabbitMQ の�
 当該マスタサーバ環境は、同じエッジコンピューティングデバイスに配置されても、別の物理(仮想)サーバ内に配置されても、どちらでも構いません。
 
 ## RabbitMQ の Golang Runtime ライブラリ
-sap-api-integrations-product-master-reads-rmq-kube は、RabbitMQ の Golang Runtime ライブラリ として、[rabbitmq-golang-client](github.com/latonaio/rabbitmq-golang-client)を利用しています。
+sap-api-integrations-product-master-reads-rmq-kube は、RabbitMQ の Golang Runtime ライブラリ として、[rabbitmq-golang-client](https://github.com/latonaio/rabbitmq-golang-client)を利用しています。
 
 ## デプロイ・稼働
 sap-api-integrations-product-master-reads-rmq-kube の デプロイ・稼働 を行うためには、aion-service-definitions の services.yml に、本レポジトリの services.yml を設定する必要があります。

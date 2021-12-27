@@ -35,7 +35,7 @@ func NewSAPAPICaller(baseUrl string, outputQueueTo []string, outputter RMQOutput
 	}
 }
 
-func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationArea, productSalesOrg, productDistributionChnl string, accepter []string) {
+func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription string, accepter []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(len(accepter))
 	for _, fn := range accepter {
@@ -80,9 +80,14 @@ func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationA
 				c.SalesOrganization(product, productSalesOrg, productDistributionChnl)
 				wg.Done()
 			}()
-		case "ProductDesc":
+		case "ProductDescByProduct":
 			func() {
-				c.ProductDesc(product)
+				c.ProductDescByProduct(product, language)
+				wg.Done()
+			}()
+		case "ProductDescByDesc":
+			func() {
+				c.ProductDescByDesc(language, productDescription)
 				wg.Done()
 			}()
 		default:
@@ -99,7 +104,7 @@ func (c *SAPAPICaller) General(product string) {
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "General"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterGeneral"})
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -134,7 +139,7 @@ func (c *SAPAPICaller) Plant(product, plant string) {
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "Plant"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterPlant"})
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -169,7 +174,7 @@ func (c *SAPAPICaller) MRPArea(product, plant, mrpArea string) {
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "MRPArea"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterMRPArea"})
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -204,7 +209,7 @@ func (c *SAPAPICaller) Procurement(product, plant string) {
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "Procurement"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterProcurement"})
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -239,7 +244,7 @@ func (c *SAPAPICaller) WorkScheduling(product, plant string) {
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "WorkScheduling"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterWorkScheduling"})
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -274,7 +279,7 @@ func (c *SAPAPICaller) SalesPlant(product, plant string) {
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "SalesPlant"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterSalesPlant"})
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -309,7 +314,7 @@ func (c *SAPAPICaller) Accounting(product, valuationArea string) {
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "Accounting"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterAccounting"})
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -344,7 +349,7 @@ func (c *SAPAPICaller) SalesOrganization(product, productSalesOrg, productDistri
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "SalesOrganization"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterSalesOrganization"})
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -373,13 +378,13 @@ func (c *SAPAPICaller) callProductSrvAPIRequirementSalesOrganization(api, produc
 	return data, nil
 }
 
-func (c *SAPAPICaller) ProductDesc(product string) {
-	data, err := c.callProductSrvAPIRequirementProductDesc(fmt.Sprintf("A_ProductDescription(Product='%s',Language='JA')", product))
+func (c *SAPAPICaller) ProductDescByProduct(product, language string) {
+	data, err := c.callProductSrvAPIRequirementProductDescByProduct("A_ProductDescription", product, language)
 	if err != nil {
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductDesc"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterProductDescByProduct"})
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -387,11 +392,47 @@ func (c *SAPAPICaller) ProductDesc(product string) {
 	c.log.Info(data)
 }
 
-func (c *SAPAPICaller) callProductSrvAPIRequirementProductDesc(api string) ([]sap_api_output_formatter.ProductDesc, error) {
+func (c *SAPAPICaller) callProductSrvAPIRequirementProductDescByProduct(api, product, language string) ([]sap_api_output_formatter.ProductDesc, error) {
 	url := strings.Join([]string{c.baseURL, "API_PRODUCT_SRV", api}, "/")
 	req, _ := http.NewRequest("GET", url, nil)
 
 	c.setHeaderAPIKeyAccept(req)
+	c.getQueryWithProductDescByProduct(req, product, language)
+
+	resp, err := new(http.Client).Do(req)
+	if err != nil {
+		return nil, xerrors.Errorf("API request error: %w", err)
+	}
+	defer resp.Body.Close()
+
+	byteArray, _ := ioutil.ReadAll(resp.Body)
+	data, err := sap_api_output_formatter.ConvertToProductDesc(byteArray, c.log)
+	if err != nil {
+		return nil, xerrors.Errorf("convert error: %w", err)
+	}
+	return data, nil
+}
+
+func (c *SAPAPICaller) ProductDescByDesc(language, productDescription string) {
+	data, err := c.callProductSrvAPIRequirementProductDescByDesc("A_ProductDescription", language, productDescription)
+	if err != nil {
+		c.log.Error(err)
+		return
+	}
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterProductDescByDesc"})
+	if err != nil {
+		c.log.Error(err)
+		return
+	}
+	c.log.Info(data)
+}
+
+func (c *SAPAPICaller) callProductSrvAPIRequirementProductDescByDesc(api, language, productDescription string) ([]sap_api_output_formatter.ProductDesc, error) {
+	url := strings.Join([]string{c.baseURL, "API_PRODUCT_SRV", api}, "/")
+	req, _ := http.NewRequest("GET", url, nil)
+
+	c.setHeaderAPIKeyAccept(req)
+	c.getQueryWithProductDescByDesc(req, language, productDescription)
 
 	resp, err := new(http.Client).Do(req)
 	if err != nil {
@@ -460,8 +501,14 @@ func (c *SAPAPICaller) getQueryWithSalesOrganization(req *http.Request, product,
 	req.URL.RawQuery = params.Encode()
 }
 
-func (c *SAPAPICaller) getQueryWithProductDesc(req *http.Request, product string) {
+func (c *SAPAPICaller) getQueryWithProductDescByProduct(req *http.Request, product, language string) {
 	params := req.URL.Query()
-	params.Add("$filter", fmt.Sprintf("Product eq '%s'", product))
+	params.Add("$filter", fmt.Sprintf("Product eq '%s' and Language eq '%s'", product, language))
+	req.URL.RawQuery = params.Encode()
+}
+
+func (c *SAPAPICaller) getQueryWithProductDescByDesc(req *http.Request, language, productDescription string) {
+	params := req.URL.Query()
+	params.Add("$filter", fmt.Sprintf("Language eq '%s' and substringof('%s', ProductDescription)", language, productDescription))
 	req.URL.RawQuery = params.Encode()
 }
