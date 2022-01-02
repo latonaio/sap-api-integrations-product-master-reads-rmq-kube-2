@@ -33,7 +33,7 @@ AION の仕様では、Kubernetes 上 の 当該マイクロサービスPod は 
 ## RabbitMQ への JSON Output
 
 sap-api-integrations-product-master-reads-rmq-kube は、Outputとして、RabbitMQ へのメッセージをJSON形式で出力します。  
-Input の サンプルJSON は、Outputs フォルダ内にあります。  
+Output の サンプルJSON は、Outputs フォルダ内にあります。  
 
 ## RabbitMQ の マスタサーバ環境
 
