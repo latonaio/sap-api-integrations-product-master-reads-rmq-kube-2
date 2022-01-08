@@ -133,6 +133,16 @@ type SDC struct {
 				MatlCompIsMarkedForBackflush  string `json:"MatlCompIsMarkedForBackflush"`
 				ProductionSchedulingProfile   string `json:"ProductionSchedulingProfile"`
 			} `json:"Work_Scheduling"`
+			Quality struct {
+				MaximumStoragePeriod           string      `json:"MaximumStoragePeriod"`
+				QualityMgmtCtrlKey             string      `json:"QualityMgmtCtrlKey"`
+				MatlQualityAuthorizationGroup  string      `json:"MatlQualityAuthorizationGroup"`
+				HasPostToInspectionStock       bool        `json:"HasPostToInspectionStock"`
+				InspLotDocumentationIsRequired bool        `json:"InspLotDocumentationIsRequired"`
+				SuplrQualityManagementSystem   string      `json:"SuplrQualityManagementSystem"`
+				RecrrgInspIntervalTimeInDays   string      `json:"RecrrgInspIntervalTimeInDays"`
+				ProductQualityCertificateType  string      `json:"ProductQualityCertificateType"`
+			} `json:"Quality"`
 		} `json:"Plant"`
 		SalesOrganization struct {
 			ProductSalesOrg                string `json:"ProductSalesOrg"`

@@ -90,6 +90,11 @@ func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationA
 				c.ProductDescByDesc(language, productDescription)
 				wg.Done()
 			}()
+		case "Quality":
+			func() {
+				c.Quality(product, plant)
+				wg.Done()
+			}()
 		default:
 			wg.Done()
 		}
@@ -478,6 +483,41 @@ func (c *SAPAPICaller) callProductSrvAPIRequirementProductDescByDesc(api, langua
 	return data, nil
 }
 
+func (c *SAPAPICaller) Quality(product, plant string) {
+	data, err := c.callProductSrvAPIRequirementQuality("A_ProductPlantQualityMgmt", product, plant)
+	if err != nil {
+		c.log.Error(err)
+		return
+	}
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": data, "function": "ProductMasterQuality"})
+	if err != nil {
+		c.log.Error(err)
+		return
+	}
+	c.log.Info(data)
+}
+
+func (c *SAPAPICaller) callProductSrvAPIRequirementQuality(api, product, plant string) ([]sap_api_output_formatter.Quality, error) {
+	url := strings.Join([]string{c.baseURL, "API_PRODUCT_SRV", api}, "/")
+	req, _ := http.NewRequest("GET", url, nil)
+
+	c.setHeaderAPIKeyAccept(req)
+	c.getQueryWithQuality(req, product, plant)
+
+	resp, err := new(http.Client).Do(req)
+	if err != nil {
+		return nil, xerrors.Errorf("API request error: %w", err)
+	}
+	defer resp.Body.Close()
+
+	byteArray, _ := ioutil.ReadAll(resp.Body)
+	data, err := sap_api_output_formatter.ConvertToQuality(byteArray, c.log)
+	if err != nil {
+		return nil, xerrors.Errorf("convert error: %w", err)
+	}
+	return data, nil
+}
+
 func (c *SAPAPICaller) setHeaderAPIKeyAccept(req *http.Request) {
 	req.Header.Set("APIKey", c.apiKey)
 	req.Header.Set("Accept", "application/json")
@@ -540,5 +580,11 @@ func (c *SAPAPICaller) getQueryWithProductDescByProduct(req *http.Request, produ
 func (c *SAPAPICaller) getQueryWithProductDescByDesc(req *http.Request, language, productDescription string) {
 	params := req.URL.Query()
 	params.Add("$filter", fmt.Sprintf("Language eq '%s' and substringof('%s', ProductDescription)", language, productDescription))
+	req.URL.RawQuery = params.Encode()
+}
+
+func (c *SAPAPICaller) getQueryWithQuality(req *http.Request, product, plant string) {
+	params := req.URL.Query()
+	params.Add("$filter", fmt.Sprintf("Product eq '%s' and Plant eq '%s'", product, plant))
 	req.URL.RawQuery = params.Encode()
 }

@@ -303,6 +303,38 @@ func ConvertToProductDesc(raw []byte, l *logger.Logger) ([]ProductDesc, error) {
 	return productDesc, nil
 }
 
+func ConvertToQuality(raw []byte, l *logger.Logger) ([]Quality, error) {
+	pm := &responses.Quality{}
+	err := json.Unmarshal(raw, pm)
+	if err != nil {
+		return nil, xerrors.Errorf("cannot convert to Quality. unmarshal error: %w", err)
+	}
+	if len(pm.D.Results) == 0 {
+		return nil, xerrors.New("Result data is not exist")
+	}
+	if len(pm.D.Results) > 10 {
+		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
+	}
+	quality := make([]Quality, 0, 10)
+	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
+		data := pm.D.Results[i]
+		quality = append(quality, Quality{
+			Product:                        data.Product,
+			Plant:                          data.Plant,
+			MaximumStoragePeriod:           data.MaximumStoragePeriod,
+			QualityMgmtCtrlKey:             data.QualityMgmtCtrlKey,
+			MatlQualityAuthorizationGroup:  data.MatlQualityAuthorizationGroup,
+			HasPostToInspectionStock:       data.HasPostToInspectionStock,
+			InspLotDocumentationIsRequired: data.InspLotDocumentationIsRequired,
+			SuplrQualityManagementSystem:   data.SuplrQualityManagementSystem,
+			RecrrgInspIntervalTimeInDays:   data.RecrrgInspIntervalTimeInDays,
+			ProductQualityCertificateType:  data.ProductQualityCertificateType,
+		})
+	}
+
+	return quality, nil
+}
+
 func ConvertToToProductDesc(raw []byte, l *logger.Logger) ([]ToProductDesc, error) {
 	pm := &responses.ToProductDesc{}
 	err := json.Unmarshal(raw, pm)

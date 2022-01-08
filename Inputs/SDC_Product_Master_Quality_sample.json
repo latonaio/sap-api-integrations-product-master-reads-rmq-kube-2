@@ -1,0 +1,122 @@
+{
+	"connection_key": "response",
+	"result": true,
+	"redis_key": "abcdefg",
+	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
+	"material": {
+		"Material": "D20_EPDM_SMRT_S",
+		"IndustrySector": "",
+		"ProductType": "",
+		"BaseUnit": "",
+		"ValidityStartDate": "",
+		"ProductGroup": "",
+		"Division": "",
+		"GrossWeight": "",
+		"WeightUnit": "",
+		"SizeOrDimensionText": "",
+		"ProductStandardID": "",
+		"CreationDate": "",
+		"LastChangeDate": "",
+		"IsMarkedForDeletion": null,
+		"NetWeight": "",
+		"ChangeNumber": "",
+		"Plant": {
+			"Plant": "1010",
+			"PurchasingGroup": "",
+			"ProductionInvtryManagedLoc": "",
+			"AvailabilityCheckType": "",
+			"ProfitCenter": "",
+			"GoodsReceiptDuration": "",
+			"MRPType": "",
+			"MRPResponsible": "",
+			"MinimumLotSizeQuantity": "",
+			"MaximumLotSizeQuantity": "",
+			"FixedLotSizeQuantity": "",
+			"IsBatchManagementRequired": null,
+			"ProcurementType": "",
+			"IsInternalBatchManaged": null,
+			"GoodsIssueUnit": "",
+			"MaterialFreightGroup": "",
+			"ProductLogisticsHandlingGroup": "",
+			"IsMarkedForDeletion": null,
+			"MRPArea": {
+				"MRPArea": "",
+				"MRPType": "",
+				"MRPResponsible": "",
+				"MRPGroup": "",
+				"ReorderThresholdQuantity": "",
+				"PlanningTimeFence": "",
+				"LotSizingProcedure": "",
+				"LotSizeRoundingQuantity": "",
+				"MinimumLotSizeQuantity": "",
+				"MaximumLotSizeQuantity": "",
+				"MaximumStockQuantity": "",
+				"ProcurementSubType": "",
+				"DfltStorageLocationExtProcmt": "",
+				"MRPPlanningCalendar": "",
+				"SafetyStockQuantity": "",
+				"SafetyDuration": "",
+				"FixedLotSizeQuantity": "",
+				"PlannedDeliveryDurationInDays": "",
+				"StorageLocation": "",
+				"IsMarkedForDeletion": false
+			},
+			"Procurement": {
+				"IsAutoPurOrdCreationAllowed": true,
+				"IsSourceListRequired": true
+			},
+			"Sales_Plant": {
+				"LoadingGroup": "",
+				"AvailabilityCheckType": ""
+			},
+			"Work_Scheduling": {
+				"ProductionInvtryManagedLoc": "",
+				"ProductProcessingTime": "",
+				"ProductionSupervisor": "",
+				"ProductProductionQuantityUnit": "",
+				"ProdnOrderIsBatchRequired": "",
+				"MatlCompIsMarkedForBackflush": "",
+				"ProductionSchedulingProfile": ""
+			},
+			"Quality": {
+				"MaximumStoragePeriod": "",
+				"QualityMgmtCtrlKey": "",
+				"MatlQualityAuthorizationGroup": "",
+				"HasPostToInspectionStock": null,
+				"InspLotDocumentationIsRequired": null,
+				"SuplrQualityManagementSystem": "",
+				"RecrrgInspIntervalTimeInDays": "",
+				"ProductQualityCertificateType": ""
+			}
+		},
+		"Sales_Organization": {
+			"ProductSalesOrg": "",
+			"ProductDistributionChnl": "",
+			"SupplyingPlant": "",
+			"PriceSpecificationProductGroup": "",
+			"AccountDetnProductGroup": "",
+			"ItemCategoryGroup": "",
+			"SalesMeasureUnit": "",
+			"ProductHierarchy": "",
+			"IsMarkedForDeletion": null
+		},
+		"ValuationArea": {
+			"ValuationArea": "",
+			"ValuationClass": "",
+			"StandardPrice": "",
+			"PriceUnitQty": "",
+			"MovingAveragePrice": "",
+			"PriceLastChangeDate": "",
+			"PlannedPrice": "",
+			"IsMarkedForDeletion": null
+		},
+		"ProductDescription": {
+			"Language": "",
+			"ProductDescription": ""
+		}
+	},
+	"api_schema": "sap.s4.beh.product.v1.Product.Created.v1",
+	"accepter": ["Quality"],
+	"material_code": "D20_EPDM_SMRT_S",
+	"deleted": false
+}

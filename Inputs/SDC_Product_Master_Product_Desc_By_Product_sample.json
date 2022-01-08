@@ -77,6 +77,16 @@
 				"ProdnOrderIsBatchRequired": "",
 				"MatlCompIsMarkedForBackflush": "",
 				"ProductionSchedulingProfile": ""
+			},
+			"Quality": {
+				"MaximumStoragePeriod": "",
+				"QualityMgmtCtrlKey": "",
+				"MatlQualityAuthorizationGroup": "",
+				"HasPostToInspectionStock": null,
+				"InspLotDocumentationIsRequired": null,
+				"SuplrQualityManagementSystem": "",
+				"RecrrgInspIntervalTimeInDays": "",
+				"ProductQualityCertificateType": ""
 			}
 		},
 		"Sales_Organization": {

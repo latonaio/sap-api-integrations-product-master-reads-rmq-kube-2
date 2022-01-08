@@ -81,6 +81,7 @@ func getAccepter(data map[string]interface{}) []string {
 			"Product", "Plant", "MRPArea", "Procurement",
 			"WorkScheduling", "WorkScheduling", "SalesPlant",
 			"Accounting", "SalesOrganization", "ProductDescByProduct", "ProductDescByDesc",
+			"Quality",
 		}
 	}
 	return accepter
