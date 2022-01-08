@@ -5,23 +5,30 @@ type ProductMaster struct {
 	Result        bool   `json:"result"`
 	RedisKey      string `json:"redis_key"`
 	Filepath      string `json:"filepath"`
-	Product       string `json:"material"`
+	Product       string `json:"Product"`
 	APISchema     string `json:"api_schema"`
 	MaterialCode  string `json:"material_code"`
 	Deleted       string `json:"deleted"`
 }
 
 type General struct {
-	Product             string `json:"Product"`
-	ProductDescription  string `json:"Product_desc"`
-	BaseUnit            string `json:"BaseUnit"`
-	ValidityStartDate   string `json:"ValidityStartDate"`
-	ProductGroup        string `json:"ProductGroup"`
-	Division            string `json:"Division"`
-	GrossWeight         string `json:"GrossWeight"`
-	WeightUnit          string `json:"WeightUnit"`
-	SizeOrDimensionText string `json:"SizeOrDimensionText"`
-	ProductStandardID   string `json:"ProductStandardID"`
+	Product                   string `json:"Product"`
+	IndustrySector            string `json:"IndustrySector"`
+	ProductType               string `json:"ProductType"`
+	BaseUnit                  string `json:"BaseUnit"`
+	ValidityStartDate         string `json:"ValidityStartDate"`
+	ProductGroup              string `json:"ProductGroup"`
+	Division                  string `json:"Division"`
+	GrossWeight               string `json:"GrossWeight"`
+	WeightUnit                string `json:"WeightUnit"`
+	SizeOrDimensionText       string `json:"SizeOrDimensionText"`
+	ProductStandardID         string `json:"ProductStandardID"`
+	CreationDate              string `json:"CreationDate"`
+	LastChangeDate            string `json:"LastChangeDate"`
+	IsMarkedForDeletion       bool   `json:"IsMarkedForDeletion"`
+	NetWeight                 string `json:"NetWeight"`
+	ChangeNumber              string `json:"ChangeNumber"`
+	ToProductDesc             string `json:"to_Description"`
 }
 
 type Plant struct {
@@ -98,7 +105,7 @@ type SalesPlant struct {
 }
 
 type Accounting struct {
-	Product             string `json:"Material"`
+	Product             string `json:"Product"`
 	ValuationArea       string `json:"ValuationArea"`
 	ValuationClass      string `json:"ValuationClass"`
 	StandardPrice       string `json:"StandardPrice"`
@@ -110,7 +117,7 @@ type Accounting struct {
 }
 
 type SalesOrganization struct {
-	Product                        string `json:"Material"`
+	Product                        string `json:"Product"`
 	ProductSalesOrg                string `json:"ProductSalesOrg"`
 	ProductDistributionChnl        string `json:"ProductDistributionChnl"`
 	SupplyingPlant                 string `json:"SupplyingPlant"`
@@ -123,6 +130,12 @@ type SalesOrganization struct {
 }
 
 type ProductDesc struct {
+	Product            string `json:"Product"`
+	Language           string `json:"Language"`
+	ProductDescription string `json:"ProductDescription"`
+}
+
+type ToProductDesc struct {
 	Product            string `json:"Product"`
 	Language           string `json:"Language"`
 	ProductDescription string `json:"ProductDescription"`

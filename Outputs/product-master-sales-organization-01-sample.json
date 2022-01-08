@@ -1,0 +1,20 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L308",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).SalesOrganization",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "21",
+			"ProductSalesOrg": "DE10",
+			"ProductDistributionChnl": "10",
+			"SupplyingPlant": "DE10",
+			"PriceSpecificationProductGroup": "",
+			"AccountDetnProductGroup": "X1",
+			"ItemCategoryGroup": "PSTE",
+			"SalesMeasureUnit": "",
+			"ProductHierarchy": "",
+			"IsMarkedForDeletion": false
+		}
+	],
+	"time": "2021-12-27T11:13:42.088496+09:00"
+}

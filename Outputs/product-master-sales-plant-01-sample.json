@@ -1,0 +1,14 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L248",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).SalesPlant",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "D20_EPDM_SMRT_S",
+			"Plant": "1010",
+			"LoadingGroup": "0001",
+			"AvailabilityCheckType": "SR"
+		}
+	],
+	"time": "2021-12-22T18:18:19.940376+09:00"
+}

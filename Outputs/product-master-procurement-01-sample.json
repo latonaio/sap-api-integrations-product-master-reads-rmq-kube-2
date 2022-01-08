@@ -1,0 +1,14 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L183",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).Procurement",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "D20_EPDM_SMRT_S",
+			"Plant": "1010",
+			"IsAutoPurOrdCreationAllowed": false,
+			"IsSourceListRequired": false
+		}
+	],
+	"time": "2021-12-22T10:39:39.932169+09:00"
+}

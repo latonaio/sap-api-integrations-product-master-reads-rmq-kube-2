@@ -1,0 +1,58 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L368",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).ProductDescByDesc",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "A001",
+			"Language": "JA",
+			"ProductDescription": "請求対象勘定"
+		},
+		{
+			"Product": "E005",
+			"Language": "JA",
+			"ProductDescription": "請求可能経費 05"
+		},
+		{
+			"Product": "E006",
+			"Language": "JA",
+			"ProductDescription": "請求可能経費 06"
+		},
+		{
+			"Product": "E007",
+			"Language": "JA",
+			"ProductDescription": "請求可能経費 07"
+		},
+		{
+			"Product": "E008",
+			"Language": "JA",
+			"ProductDescription": "請求可能経費 08"
+		},
+		{
+			"Product": "E009",
+			"Language": "JA",
+			"ProductDescription": "請求可能経費 09"
+		},
+		{
+			"Product": "E010",
+			"Language": "JA",
+			"ProductDescription": "請求可能経費 10"
+		},
+		{
+			"Product": "E011",
+			"Language": "JA",
+			"ProductDescription": "請求費用 11"
+		},
+		{
+			"Product": "E012",
+			"Language": "JA",
+			"ProductDescription": "請求費用 12"
+		},
+		{
+			"Product": "E013",
+			"Language": "JA",
+			"ProductDescription": "請求費用 13"
+		}
+	],
+	"time": "2021-12-22T18:36:14.74825+09:00"
+}

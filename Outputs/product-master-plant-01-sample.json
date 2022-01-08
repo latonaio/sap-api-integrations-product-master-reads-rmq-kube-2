@@ -1,0 +1,29 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L123",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).Plant",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "D20_EPDM_SMRT_S",
+			"Plant": "1010",
+			"PurchasingGroup": "001",
+			"ProductionInvtryManagedLoc": "101E",
+			"AvailabilityCheckType": "SR",
+			"ProfitCenter": "YB111",
+			"GoodsReceiptDuration": "1",
+			"MRPType": "PD",
+			"MRPResponsible": "001",
+			"MinimumLotSizeQuantity": "0",
+			"MaximumLotSizeQuantity": "0",
+			"FixedLotSizeQuantity": "0",
+			"IsBatchManagementRequired": false,
+			"ProcurementType": "F",
+			"IsInternalBatchManaged": false,
+			"GoodsIssueUnit": "",
+			"MaterialFreightGroup": "",
+			"ProductLogisticsHandlingGroup": "",
+			"IsMarkedForDeletion": false
+		}
+	],
+	"time": "2021-12-22T10:36:50.251325+09:00"
+}

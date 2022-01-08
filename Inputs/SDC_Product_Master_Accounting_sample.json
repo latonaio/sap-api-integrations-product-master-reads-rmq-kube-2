@@ -5,7 +5,8 @@
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"material": {
 		"Material": "21",
-		"Product_desc": "",
+		"IndustrySector": "",
+		"ProductType": "",
 		"BaseUnit": "",
 		"ValidityStartDate": "",
 		"ProductGroup": "",
@@ -14,6 +15,11 @@
 		"WeightUnit": "",
 		"SizeOrDimensionText": "",
 		"ProductStandardID": "",
+		"CreationDate": "",
+		"LastChangeDate": "",
+		"IsMarkedForDeletion": null,
+		"NetWeight": "",
+		"ChangeNumber": "",
 		"Plant": {
 			"Plant": "",
 			"PurchasingGroup": "",

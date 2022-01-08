@@ -68,7 +68,8 @@ sap-api-integrations-product-master-reads-rmq-kube には、次の API をコー
 * A_ProductPlantSales（品目マスタ - 販売プラントデータ）
 * A_ProductValuationAccount（品目マスタ - 評価エリアデータ）
 * A_ProductSalesDelivery（品目マスタ - 販売組織データ）
-* A_ProductDescription（品目マスタ - テキストデータ）  
+* A_ProductDescription（品目マスタ - テキストデータ）
+* ToProductDesc（品目マスタ - テキストデータ ※To）
 
 ## API への 値入力条件 の 初期値
 sap-api-integrations-product-master-reads-rmq-kube において、API への値入力条件の初期値は、入力ファイルレイアウトの種別毎に、次の通りとなっています。  
@@ -188,13 +189,14 @@ func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationA
 
 ```
 {
-	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L93",
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L98",
 	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).General",
 	"level": "INFO",
 	"message": [
 		{
-			"Material": "A001",
-			"Product_desc": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product('A001')/to_Description",
+			"Product": "A001",
+			"IndustrySector": "M",
+			"ProductType": "SERV",
 			"BaseUnit": "AU",
 			"ValidityStartDate": "",
 			"ProductGroup": "A001",
@@ -202,9 +204,15 @@ func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationA
 			"GrossWeight": "0.000",
 			"WeightUnit": "KG",
 			"SizeOrDimensionText": "",
-			"ProductStandardID": ""
+			"ProductStandardID": "",
+			"CreationDate": "/Date(1466380800000)/",
+			"LastChangeDate": "/Date(1491868800000)/",
+			"IsMarkedForDeletion": false,
+			"NetWeight": "0.000",
+			"ChangeNumber": "",
+			"to_Description": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product('A001')/to_Description"
 		}
 	],
-	"time": "2021-12-22T10:19:54.310555+09:00"
+	"time": "2022-01-08T10:38:23.402329+09:00"
 }
 ```

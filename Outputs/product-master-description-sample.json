@@ -1,8 +1,0 @@
-{
-  "Material": "A001",
-  "Product_desc": "請求対象勘定",
-  "cursor": "/Users/kyotatashiro/go/src/sap-api-integrations-product-master/SAP_API_Caller/caller.go#L290",
-  "function": "sap-api-integrations-product-master-reads-rmq-kube/SAP_API_Caller.(*SAPAPICaller).ProductDescription",
-  "level": "INFO",
-  "time": "2021-11-26T15:50:30.513721+09:00"
-}

@@ -30,7 +30,7 @@ spec:
             - name: RMQ_PASS
               value: "guest"
             - name: RMQ_ADDRESS
-              value: "192.168.XXX.XXX"
+              value: "192.168.128.135"
             - name: RMQ_PORT
               value: "32094"
             - name: RMQ_VHOST

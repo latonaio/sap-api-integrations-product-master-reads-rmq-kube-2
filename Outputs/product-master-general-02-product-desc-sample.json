@@ -1,0 +1,58 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L105",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).General",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "A001",
+			"Language": "ZH",
+			"ProductDescription": "账面待开票"
+		},
+		{
+			"Product": "A001",
+			"Language": "TH",
+			"ProductDescription": "บัญชีที่จะวางบิล"
+		},
+		{
+			"Product": "A001",
+			"Language": "KO",
+			"ProductDescription": "청구할 계정"
+		},
+		{
+			"Product": "A001",
+			"Language": "RO",
+			"ProductDescription": "În cont de facturat"
+		},
+		{
+			"Product": "A001",
+			"Language": "SL",
+			"ProductDescription": "Na konto za fakturiranje"
+		},
+		{
+			"Product": "A001",
+			"Language": "HR",
+			"ProductDescription": "Na konto za fakturiranje"
+		},
+		{
+			"Product": "A001",
+			"Language": "MS",
+			"ProductDescription": "Pembayaran kredit untuk dibilkan"
+		},
+		{
+			"Product": "A001",
+			"Language": "UK",
+			"ProductDescription": "На рахунок до фактурування"
+		},
+		{
+			"Product": "A001",
+			"Language": "ET",
+			"ProductDescription": "Arveldatav konto"
+		},
+		{
+			"Product": "A001",
+			"Language": "AR",
+			"ProductDescription": "على الحساب مطلوب فوترته"
+		}
+	],
+	"time": "2022-01-08T10:38:23.802489+09:00"
+}
