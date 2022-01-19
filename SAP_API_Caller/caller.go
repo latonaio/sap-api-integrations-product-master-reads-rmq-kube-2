@@ -349,7 +349,7 @@ func (c *SAPAPICaller) callProductSrvAPIRequirementSalesPlant(api, product, plan
 }
 
 func (c *SAPAPICaller) Accounting(product, valuationArea string) {
-	data, err := c.callProductSrvAPIRequirementAccounting("A_ProductValuationAccount", product, valuationArea)
+	data, err := c.callProductSrvAPIRequirementAccounting("A_ProductValuation", product, valuationArea)
 	if err != nil {
 		c.log.Error(err)
 		return

@@ -66,9 +66,10 @@ sap-api-integrations-product-master-reads-rmq-kube には、次の API をコー
 * A_ProductPlantProcurement（品目マスタ - 購買データ）
 * A_ProductWorkScheduling（品目マスタ - 作業計画データ）
 * A_ProductPlantSales（品目マスタ - 販売プラントデータ）
-* A_ProductValuationAccount（品目マスタ - 評価エリアデータ）
+* A_ProductValuation（品目マスタ - 評価エリアデータ）
 * A_ProductSalesDelivery（品目マスタ - 販売組織データ）
 * A_ProductPlantQualityMgmt（品目マスタ - 品質管理データ）
+* A_ProductSalesTax（品目マスタ - 販売税データ）
 * A_ProductDescription（品目マスタ - テキストデータ）
 * ToProductDesc（品目マスタ - テキストデータ ※To）
 
@@ -85,6 +86,8 @@ sap-api-integrations-product-master-reads-rmq-kube において、API への値�
 * inoutSDC.Product.SalesOrganization.ProductDistributionChnl（流通チャネル）
 * inoutSDC.Product.ProductDescription.Language（言語キー）
 * inoutSDC.Product.ProductDescription.ProductDescription（品目テキスト）
+* inoutSDC.Product.SalesTax.Country（国）
+* inoutSDC.Product.SalesTax.TaxCategory（税カテゴリ）
 
 ## SAP API Bussiness Hub の API の選択的コール
 
