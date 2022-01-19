@@ -179,6 +179,11 @@ func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationA
 				c.Quality(product, plant)
 				wg.Done()
 			}()
+		case "SalesTax":
+			func() {
+				c.SalesTax(product, country, taxCategory)
+				wg.Done()
+			}()
 		default:
 			wg.Done()
 		}

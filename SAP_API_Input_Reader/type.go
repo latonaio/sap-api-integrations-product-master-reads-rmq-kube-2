@@ -169,6 +169,11 @@ type SDC struct {
 			Language           string `json:"Language"`
 			ProductDescription string `json:"ProductDescription"`
 		} `json:"ProductDescription"`
+		SalesTax struct {
+			Country           string `json:"Country"`
+			TaxCategory       string `json:"TaxCategory"`
+			TaxClassification string `json:"TaxClassification"`
+		} `json:"SalesTax"`
 	} `json:"material"`
 	APISchema    string   `json:"api_schema"`
 	Accepter     []string `json:"accepter"`

@@ -335,6 +335,32 @@ func ConvertToQuality(raw []byte, l *logger.Logger) ([]Quality, error) {
 	return quality, nil
 }
 
+func ConvertToSalesTax(raw []byte, l *logger.Logger) ([]SalesTax, error) {
+	pm := &responses.SalesTax{}
+	err := json.Unmarshal(raw, pm)
+	if err != nil {
+		return nil, xerrors.Errorf("cannot convert to SalesTax. unmarshal error: %w", err)
+	}
+	if len(pm.D.Results) == 0 {
+		return nil, xerrors.New("Result data is not exist")
+	}
+	if len(pm.D.Results) > 10 {
+		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
+	}
+	salesTax := make([]SalesTax, 0, 10)
+	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
+		data := pm.D.Results[i]
+		salesTax = append(salesTax, SalesTax{
+	Product:           data.Product,
+	Country:           data.Country,
+	TaxCategory:       data.TaxCategory,
+	TaxClassification: data.TaxClassification,
+		})
+	}
+
+	return salesTax, nil
+}
+
 func ConvertToToProductDesc(raw []byte, l *logger.Logger) ([]ToProductDesc, error) {
 	pm := &responses.ToProductDesc{}
 	err := json.Unmarshal(raw, pm)

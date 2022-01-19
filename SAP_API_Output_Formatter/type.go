@@ -148,6 +148,13 @@ type Quality struct {
 	ProductQualityCertificateType  string `json:"ProductQualityCertificateType"`
 }
 
+type SalesTax struct {
+	Product           string `json:"Product"`
+	Country           string `json:"Country"`
+	TaxCategory       string `json:"TaxCategory"`
+	TaxClassification string `json:"TaxClassification"`
+}
+
 type ToProductDesc struct {
 	Product            string `json:"Product"`
 	Language           string `json:"Language"`

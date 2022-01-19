@@ -4,7 +4,7 @@
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"material": {
-		"Material": "D20_EPDM_SMRT_S",
+		"Material": "21",
 		"IndustrySector": "",
 		"ProductType": "",
 		"BaseUnit": "",
@@ -21,7 +21,7 @@
 		"NetWeight": "",
 		"ChangeNumber": "",
 		"Plant": {
-			"Plant": "1010",
+			"Plant": "",
 			"PurchasingGroup": "",
 			"ProductionInvtryManagedLoc": "",
 			"AvailabilityCheckType": "",
@@ -115,13 +115,13 @@
 			"ProductDescription": ""
 		},
 		"SalesTax": {
-			"Country": "",
-			"TaxCategory": "",
+			"Country": "DE",
+			"TaxCategory": "TTX1",
 			"TaxClassification": ""
 		}
 	},
 	"api_schema": "sap.s4.beh.product.v1.Product.Created.v1",
-	"accepter": ["Quality"],
-	"material_code": "D20_EPDM_SMRT_S",
+	"accepter": ["SalesTax"],
+	"material_code": "21",
 	"deleted": false
 }

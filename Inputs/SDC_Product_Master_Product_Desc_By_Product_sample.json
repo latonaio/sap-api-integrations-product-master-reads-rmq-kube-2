@@ -113,6 +113,11 @@
 		"ProductDescription": {
 			"Language": "JA",
 			"ProductDescription": ""
+		},
+		"SalesTax": {
+			"Country": "",
+			"TaxCategory": "",
+			"TaxClassification": ""
 		}
 	},
 	"api_schema": "sap.s4.beh.product.v1.Product.Created.v1",

@@ -1,0 +1,14 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L463",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).SalesTax",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "21",
+			"Country": "DE",
+			"TaxCategory": "TTX1",
+			"TaxClassification": "1"
+		}
+	],
+	"time": "2022-01-19T15:37:16.771845+09:00"
+}

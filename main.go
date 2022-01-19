@@ -50,13 +50,13 @@ func callProcess(caller *sap_api_caller.SAPAPICaller, msg rabbitmq.RabbitmqMessa
 			return
 		}
 	}()
-	product, plant, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription := extractData(msg.Data())
+	product, plant, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription, country, taxCategory := extractData(msg.Data())
 	accepter := getAccepter(msg.Data())
-	caller.AsyncGetProductMaster(product, plant, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription, accepter)
+	caller.AsyncGetProductMaster(product, plant, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription, country, taxCategory, accepter)
 	return nil
 }
 
-func extractData(data map[string]interface{}) (product, plant, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription string) {
+func extractData(data map[string]interface{}) (product, plant, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription, country, taxCategory string) {
 	sdc := sap_api_input_reader.ConvertToSDC(data)
 	product = sdc.Product.Product
 	plant = sdc.Product.Plant.Plant
@@ -66,6 +66,8 @@ func extractData(data map[string]interface{}) (product, plant, mrpArea, valuatio
 	productDistributionChnl = sdc.Product.SalesOrganization.ProductDistributionChnl
 	language = sdc.Product.ProductDescription.Language
 	productDescription = sdc.Product.ProductDescription.ProductDescription
+	country = sdc.Product.SalesTax.Country
+	taxCategory = sdc.Product.SalesTax.TaxCategory
 	return
 }
 
@@ -81,7 +83,7 @@ func getAccepter(data map[string]interface{}) []string {
 			"Product", "Plant", "MRPArea", "Procurement",
 			"WorkScheduling", "WorkScheduling", "SalesPlant",
 			"Accounting", "SalesOrganization", "ProductDescByProduct", "ProductDescByDesc",
-			"Quality",
+			"Quality", "SalesTax",
 		}
 	}
 	return accepter
