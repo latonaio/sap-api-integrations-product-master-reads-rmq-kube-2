@@ -1,5 +1,5 @@
 {
-	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L98",
+	"cursor": "/home/ampamman/go/src/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L108",
 	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).General",
 	"level": "INFO",
 	"message": [
@@ -15,13 +15,13 @@
 			"WeightUnit": "KG",
 			"SizeOrDimensionText": "",
 			"ProductStandardID": "",
-			"CreationDate": "/Date(1466380800000)/",
-			"LastChangeDate": "/Date(1491868800000)/",
+			"CreationDate": "2016-06-20T09:00:00+09:00",
+			"LastChangeDate": "2017-04-11T09:00:00+09:00",
 			"IsMarkedForDeletion": false,
 			"NetWeight": "0.000",
 			"ChangeNumber": "",
 			"to_Description": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product('A001')/to_Description"
 		}
 	],
-	"time": "2022-01-08T10:38:23.402329+09:00"
+	"time": "2022-01-26T14:51:52.138052513+09:00"
 }
