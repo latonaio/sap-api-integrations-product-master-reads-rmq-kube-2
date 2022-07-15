@@ -9,7 +9,6 @@ import (
 	"sync"
 
 	"github.com/latonaio/golang-logging-library-for-sap/logger"
-
 	"golang.org/x/xerrors"
 )
 
